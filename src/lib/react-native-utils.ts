@@ -479,7 +479,7 @@ export function getHermesEnabled(gradleFile?: string): Promise<boolean> {
             );
         })
         .then((buildGradle: any) => {
-            return Array.from(buildGradle['project.ext.react']).includes('enableHermes: true');
+            return Array.from(buildGradle['project.ext.react'] || []).some((line) => /^enableHermes\s{0,}:\s{0,}true/.test(line));
         });
 }
 
@@ -537,6 +537,13 @@ function getHermesCommand(): string {
             return false;
         }
     };
+    // Hermes is bundled with react-native since 0.69
+    const bundledHermesEngine = path.join("node_modules", "react-native", "sdks", "hermesc", getHermesOSBin(), getHermesOSExe());
+    if (fileExists(bundledHermesEngine)) {
+        return bundledHermesEngine;
+    }
+
+
     // assume if hermes-engine exists it should be used instead of hermesvm
     const hermesEngine = path.join(
         'node_modules',
