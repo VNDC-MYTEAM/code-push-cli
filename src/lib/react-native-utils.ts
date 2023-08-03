@@ -479,7 +479,7 @@ export function getHermesEnabled(gradleFile?: string): Promise<boolean> {
             );
         })
         .then((buildGradle: any) => {
-            return Array.from(buildGradle['project.ext.react'] || []).some((line) => /^enableHermes\s{0,}:\s{0,}true/.test(line));
+            return Array.from(buildGradle['project.ext.react'] || []).some((line:string) => /^enableHermes\s{0,}:\s{0,}true/.test(line));
         });
 }
 
