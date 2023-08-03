@@ -1,6 +1,6 @@
 {
-  "name": "@shm-open/code-push-cli",
-  "version": "2.6.1",
+  "name": "onus/code-push-cli",
+  "version": "0.0.1",
   "description": "Management CLI for the CodePush service",
   "main": "bin/cli.js",
   "scripts": {
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shm-open/code-push-cli"
+    "url": "https://github.com/VNDC-MYTEAM/code-push-cli"
   },
   "keywords": [
     "code",
@@ -26,8 +26,8 @@
     "react-native",
     "react"
   ],
-  "homepage": "https://github.com/shm-open/code-push-cli",
-  "author": "shihuimiao",
+  "homepage": "https://github.com/VNDC-MYTEAM/code-push-cli",
+  "author": "bryan",
   "license": "MIT",
   "dependencies": {
     "backslash": "0.2.0",
